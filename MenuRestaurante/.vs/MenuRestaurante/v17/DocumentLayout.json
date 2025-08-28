@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{03BFC285-EBCC-4436-A08C-1E0A03096862}|MenuRestaurante\\MenuRestaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\menurestaurante\\menurestaurante\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BFC285-EBCC-4436-A08C-1E0A03096862}|MenuRestaurante\\MenuRestaurante.csproj|solutionrelative:menurestaurante\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAE4BA5-E254-41EF-829F-BC210463F112}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\menurestaurante\\infrastructure\\migrations\\20250828224103_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAE4BA5-E254-41EF-829F-BC210463F112}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20250828224103_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAE4BA5-E254-41EF-829F-BC210463F112}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\menurestaurante\\infrastructure\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAE4BA5-E254-41EF-829F-BC210463F112}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BFC285-EBCC-4436-A08C-1E0A03096862}|MenuRestaurante\\MenuRestaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\menurestaurante\\menurestaurante\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{03BFC285-EBCC-4436-A08C-1E0A03096862}|MenuRestaurante\\MenuRestaurante.csproj|solutionrelative:menurestaurante\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 139,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +42,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T22:48:07.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250828224103_init.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\Infrastructure\\Migrations\\20250828224103_init.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20250828224103_init.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\Infrastructure\\Migrations\\20250828224103_init.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20250828224103_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T22:41:03.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\MenuRestaurante\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "MenuRestaurante\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\MenuRestaurante\\appsettings.Development.json",
+              "RelativeToolTip": "MenuRestaurante\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-28T22:39:26.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\MenuRestaurante\\Program.cs",
               "RelativeDocumentMoniker": "MenuRestaurante\\Program.cs",
               "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\MenuRestaurante\\MenuRestaurante\\Program.cs",
               "RelativeToolTip": "MenuRestaurante\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-28T22:24:31.089Z",
               "EditorCaption": ""
