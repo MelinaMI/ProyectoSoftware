@@ -1,18 +1,29 @@
+using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+
+//agrego swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+//Inyección de dependencias
+var connectionString = builder.Configuration["ConnectionString"];
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Crear la base de datos / aplicar migraciones al iniciar
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();      // Genera el JSON en /swagger/v1/swagger.json
+    app.UseSwaggerUI();    // Genera la UI en /swagger
 }
+
 
 app.UseHttpsRedirection();
 
