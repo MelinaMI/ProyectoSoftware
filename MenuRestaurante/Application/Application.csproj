@@ -11,7 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <Folder Include="UseCase\Category\" />
+    <Folder Include="UseCase\DeliveryType\" />
+    <Folder Include="UseCase\Dish\" />
+    <Folder Include="UseCase\Status\" />
+    <Folder Include="UseCase\OrderItem\" />
+    <Folder Include="UseCase\Order\" />
   </ItemGroup>
 
 </Project>
