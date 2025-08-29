@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
+using Infrastructure.Persistence.SeedData;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence
@@ -127,6 +128,13 @@ namespace Infrastructure.Persistence
                 entity.Property(s => s.Id).ValueGeneratedOnAdd(); //autogenerada
                 entity.Property(s => s.Name).IsRequired().HasColumnType("varchar(25)").HasMaxLength(25);
             });
+
+            //Precarga de datos
+           
+            modelBuilder.ApplyConfiguration(new DeliveryTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new StatusConfiguration());
         }
+
     }
 }

@@ -15,16 +15,27 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
 
+//Precarga de datos usando Data Seeding
+
+
+
+
+
+
+
+
+
+
+
+
 var app = builder.Build();
 
 // Crear la base de datos / aplicar migraciones al iniciar
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();      // Genera el JSON en /swagger/v1/swagger.json
-    app.UseSwaggerUI();    // Genera la UI en /swagger
+    app.UseSwagger();      
+    app.UseSwaggerUI();    
 }
-
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

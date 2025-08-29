@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MenuRestaurante")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c883dfd25b08500e749bca3785d74ba27a3eeacb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a83ee5d03bd5957182a8b2dc55d43b23ee32f39c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MenuRestaurante")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MenuRestaurante")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
