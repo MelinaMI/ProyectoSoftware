@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class    Init : Migration
+    public partial class PrimerMigracion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -60,7 +60,7 @@ namespace Infrastructure.Migrations
                     Name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
                     Description = table.Column<string>(type: "varchar(MAX)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Available = table.Column<bool>(type: "bool", nullable: false),
+                    Available = table.Column<bool>(type: "bit", nullable: false),
                     ImageUrl = table.Column<string>(type: "varchar(MAX)", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: false),
@@ -129,7 +129,7 @@ namespace Infrastructure.Migrations
                         column: x => x.Dish,
                         principalTable: "Dish",
                         principalColumn: "DishId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_OrderItem_Order_Order",
                         column: x => x.Order,
@@ -141,7 +141,7 @@ namespace Infrastructure.Migrations
                         column: x => x.Status,
                         principalTable: "Status",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250828224103_init")]
-    partial class init
+    [Migration("20250829033326_PrimerMigracion")]
+    partial class PrimerMigracion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Category", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.DeliveryType", b =>
@@ -64,7 +64,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeliveryType");
+                    b.ToTable("DeliveryType", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Dish", b =>
@@ -74,7 +74,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Available")
-                        .HasColumnType("bool");
+                        .HasColumnType("bit");
 
                     b.Property<int>("Category")
                         .HasColumnType("int");
@@ -105,7 +105,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("Category");
 
-                    b.ToTable("Dish");
+                    b.ToTable("Dish", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Order", b =>
@@ -146,7 +146,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("OverallStatus");
 
-                    b.ToTable("Order");
+                    b.ToTable("Order", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.OrderItem", b =>
@@ -184,7 +184,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("Status");
 
-                    b.ToTable("OrderItem");
+                    b.ToTable("OrderItem", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Status", b =>
@@ -202,7 +202,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Status");
+                    b.ToTable("Status", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Dish", b =>
@@ -240,7 +240,7 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Entities.Dish", "DishNavigation")
                         .WithMany("OrderItems")
                         .HasForeignKey("Dish")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Order", "OrderNavigation")
@@ -252,7 +252,7 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Entities.Status", "StatusNavigation")
                         .WithMany("OrderItems")
                         .HasForeignKey("Status")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("DishNavigation");

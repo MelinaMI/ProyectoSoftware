@@ -13,12 +13,12 @@ namespace Infrastructure.Persistence
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         //Declaro las entidades
-        public DbSet<Category> Category { get; set; }
-        public DbSet<DeliveryType> DeliveryType { get; set; }
-        public DbSet<Dish> Dish { get; set; }
-        public DbSet<Order> Order { get; set; }
-        public DbSet<OrderItem> OrderItem { get; set; }
-        public DbSet<Status> Status { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<DeliveryType> DeliveryTypes { get; set; }
+        public DbSet<Dish> Dishes { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Status> States { get; set; }
 
 
         //modelado de las relaciones
@@ -27,16 +27,18 @@ namespace Infrastructure.Persistence
             // CATEGORY
             modelBuilder.Entity<Category>(entity =>
             {
+                entity.ToTable("Category");
                 entity.HasKey(c => c.Id); //PK
                 entity.Property(c => c.Id).ValueGeneratedOnAdd(); //autogenerada
                 entity.Property(c => c.Name).IsRequired().HasColumnType("varchar(25)");
                 entity.Property(c => c.Description).IsRequired().HasColumnType("varchar(255)");
-                entity.Property(c => c.Order).HasColumnType("int");
+                entity.Property(c => c.Order).IsRequired().HasColumnType("int");
             });
 
             // DELIVERYTYPE
             modelBuilder.Entity<DeliveryType>(entity =>
             {
+                entity.ToTable("DeliveryType");
                 entity.HasKey(dt => dt.Id); //PK
                 entity.Property(dt => dt.Id).ValueGeneratedOnAdd(); //autogenerada
                 entity.Property(dt => dt.Name).IsRequired().HasColumnType("nvarchar(25)").HasMaxLength(25);
@@ -45,12 +47,13 @@ namespace Infrastructure.Persistence
             // DISH
             modelBuilder.Entity<Dish>(entity =>
             {
+                entity.ToTable("Dish");
                 entity.HasKey(d => d.DishId); //PK
                 entity.Property(d => d.DishId).ValueGeneratedOnAdd(); //autogenerada
                 entity.Property(d => d.Name).IsRequired().HasColumnType("varchar(255)").HasMaxLength(255);
-                entity.Property(d => d.Description).HasColumnType("varchar(MAX)");
-                entity.Property(d => d.Price).HasColumnType("decimal(18,2)");
-                entity.Property(d => d.Available).HasColumnType("bool");
+                entity.Property(d => d.Description).IsRequired().HasColumnType("varchar(MAX)");
+                entity.Property(d => d.Price).IsRequired().HasColumnType("decimal(18,2)");
+                entity.Property(d => d.Available).IsRequired();
                 entity.Property(d => d.ImageUrl).HasColumnType("varchar(MAX)");
                 entity.Property(d => d.CreateDate).HasColumnType("datetime");
                 entity.Property(d => d.UpdateDate).HasColumnType("datetime");
@@ -65,6 +68,7 @@ namespace Infrastructure.Persistence
             // ORDER
             modelBuilder.Entity<Order>(entity =>
             {
+                entity.ToTable("Order");
                 entity.HasKey(o => o.OrderId); //PK
                 entity.Property(o => o.OrderId).ValueGeneratedOnAdd(); //autogenerada
                 entity.Property(o => o.DeliveryTo).IsRequired().HasColumnType("varchar(255)").HasMaxLength(255);
@@ -89,6 +93,7 @@ namespace Infrastructure.Persistence
             // ORDERITEM
             modelBuilder.Entity<OrderItem>(entity =>
             {
+                entity.ToTable("OrderItem");
                 entity.HasKey(oi => oi.OrderItemId); //PK
                 entity.Property(oi => oi.OrderItemId).ValueGeneratedOnAdd(); //autogenerada
                 entity.Property(oi => oi.Quantity).IsRequired().HasColumnType("int");
@@ -98,25 +103,26 @@ namespace Infrastructure.Persistence
                 // FK hacia Order
                 entity.HasOne(oi => oi.OrderNavigation)
                 .WithMany(s => s.OrderItems) //apunta a la coleccion de OrderItems en Order
-                .HasForeignKey(o => o.Order)
-                .IsRequired();
+                .HasForeignKey(o => o.Order).OnDelete(DeleteBehavior.Cascade); //si borro una orden, se borran sus items
+
 
                 // FK hacia Dish
                 entity.HasOne(oi => oi.DishNavigation)
                 .WithMany(d => d.OrderItems) //apunta a la coleccion de OrderItems en Dish
-                .HasForeignKey(oi => oi.Dish)
-                .IsRequired();
+                .HasForeignKey(oi => oi.Dish).OnDelete(DeleteBehavior.Restrict);
+
 
                 // FK hacia Status
                 entity.HasOne(oi => oi.StatusNavigation)
                 .WithMany(s => s.OrderItems) //apunta a la coleccion de OrderItems en Status
-                .HasForeignKey(oi => oi.Status)
-                .IsRequired();
+                .HasForeignKey(oi => oi.Status).OnDelete(DeleteBehavior.Restrict);
+                
             });
 
             // STATUS
             modelBuilder.Entity<Status>(entity =>
             {
+                entity.ToTable("Status");
                 entity.HasKey(s => s.Id); //PK
                 entity.Property(s => s.Id).ValueGeneratedOnAdd(); //autogenerada
                 entity.Property(s => s.Name).IsRequired().HasColumnType("varchar(25)").HasMaxLength(25);
