@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "MenuRestaurante.Controllers.DishController",
+    "Method": "GetDish",
+    "RelativePath": "api/Dish",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MenuRestaurante.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

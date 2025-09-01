@@ -11,10 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Interfaces\Category\" />
+    <Folder Include="Interfaces\DeliveryType\" />
+    <Folder Include="Interfaces\Order\" />
+    <Folder Include="Interfaces\OrderItem\" />
     <Folder Include="UseCase\Category\" />
     <Folder Include="UseCase\DeliveryType\" />
-    <Folder Include="UseCase\Dish\" />
-    <Folder Include="UseCase\Status\" />
     <Folder Include="UseCase\OrderItem\" />
     <Folder Include="UseCase\Order\" />
   </ItemGroup>

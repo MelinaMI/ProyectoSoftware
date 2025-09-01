@@ -15,18 +15,6 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
 
-//Precarga de datos usando Data Seeding
-
-
-
-
-
-
-
-
-
-
-
 
 var app = builder.Build();
 
