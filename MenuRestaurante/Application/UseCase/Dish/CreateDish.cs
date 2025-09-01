@@ -9,7 +9,7 @@ namespace Application.UseCase.Dish
 {
     public class CreateDish
     {
-        [Required(ErrorMessage = "El nombre del plato es obligatorio")]
+      /*  [Required(ErrorMessage = "El nombre del plato es obligatorio")]
         public string Name { get; set; } = null!;
         [Required(ErrorMessage = "La descripción es obligatoria")]
         public string Description { get; set; } = null!;
@@ -18,6 +18,6 @@ namespace Application.UseCase.Dish
         [Url(ErrorMessage = "La imagen debe ser una URL válida")]
         public string ImageUrl { get; set; } = null!;
         [Required(ErrorMessage = "La categoría es obligatoria")]
-        public int Category { get; set; }
+        public int Category { get; set; }*/
     }
 }

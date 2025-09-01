@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.UseCase.Dish
 {
-    internal class UpdateDish
+    public class UpdateDish
     {
     }
 }

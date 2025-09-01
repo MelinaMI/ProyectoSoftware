@@ -1,3 +1,5 @@
+using Application.Interfaces.IStatus;
+using Application.UseCase.Status;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +17,8 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
 
+// Registrar el servicio de Status
+//builder.Services.AddScoped<IStatusService, StatusService>();
 
 var app = builder.Build();
 

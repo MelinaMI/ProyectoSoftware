@@ -11,14 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Category\" />
-    <Folder Include="Interfaces\DeliveryType\" />
-    <Folder Include="Interfaces\Order\" />
-    <Folder Include="Interfaces\OrderItem\" />
+    <Folder Include="Interfaces\ICategory\" />
+    <Folder Include="Interfaces\IDeliveryType\" />
+    <Folder Include="Interfaces\IOrder\" />
+    <Folder Include="Interfaces\IOrderItem\" />
     <Folder Include="UseCase\Category\" />
     <Folder Include="UseCase\DeliveryType\" />
     <Folder Include="UseCase\OrderItem\" />
     <Folder Include="UseCase\Order\" />
+    <Folder Include="UseCase\Status\" />
   </ItemGroup>
 
 </Project>

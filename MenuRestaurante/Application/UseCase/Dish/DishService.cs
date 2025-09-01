@@ -1,10 +1,10 @@
-﻿using Application.Interfaces.Services;
+﻿using Application.Interfaces.IDish;
 
 namespace Application.UseCase.Dish
 {
      public class DishService :IDishService
     {
-        private readonly AppDbContext _context;
+      /*  private readonly AppDbContext _context;
         public DishService(AppDbContext context)
         {
             _context = context;
@@ -13,6 +13,6 @@ namespace Application.UseCase.Dish
         public Task<Domain.Entities.Dish> CreateDish(CreateDish dish)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

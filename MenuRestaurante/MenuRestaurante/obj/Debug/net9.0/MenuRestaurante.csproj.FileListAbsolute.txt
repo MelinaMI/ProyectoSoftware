@@ -1,3 +1,11 @@
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.csproj.AssemblyReference.cache
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.AssemblyInfoInputs.cache
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.AssemblyInfo.cs
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.csproj.CoreCompileInputs.cache
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.sourcelink.json
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\bin\Debug\net9.0\appsettings.json
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\bin\Debug\net9.0\MenuRestaurante.staticwebassets.endpoints.json
@@ -147,15 +155,6 @@ C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaur
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\bin\Debug\net9.0\Infrastructure.pdb
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\bin\Debug\net9.0\Application.pdb
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\bin\Debug\net9.0\Domain.pdb
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.csproj.AssemblyReference.cache
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\rpswa.dswa.cache.json
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.AssemblyInfoInputs.cache
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.AssemblyInfo.cs
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.csproj.CoreCompileInputs.cache
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\MenuRestaurante.sourcelink.json
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\MenuRestaurante\MenuRestaurante\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json

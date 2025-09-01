@@ -19,7 +19,7 @@ namespace Infrastructure.Persistence
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Status> States { get; set; }
+        public DbSet<Status> Statuses { get; set; }
 
 
         //modelado de las relaciones

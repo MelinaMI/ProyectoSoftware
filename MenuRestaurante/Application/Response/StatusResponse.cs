@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Response
 {
-    internal class StatusResponse
+    public class StatusResponse
     {
     }
 }

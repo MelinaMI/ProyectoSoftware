@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Dish": {
+    "/api/v1/Dish": {
       "get": {
         "tags": [
           "Dish"

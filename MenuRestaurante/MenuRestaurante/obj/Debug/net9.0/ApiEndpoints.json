@@ -2,7 +2,7 @@
   {
     "ContainingType": "MenuRestaurante.Controllers.DishController",
     "Method": "GetDish",
-    "RelativePath": "api/Dish",
+    "RelativePath": "api/v1/Dish",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
