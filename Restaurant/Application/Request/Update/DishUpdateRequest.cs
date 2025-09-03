@@ -2,11 +2,8 @@
 
 namespace Application.Request.Update
 {
-    public class UpdateDishRequest
+    public class DishUpdateRequest
     {
-        [Required]
-        public Guid Id { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
@@ -20,10 +17,10 @@ namespace Application.Request.Update
         [Required]
         public int Category { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string Image { get; set; }
 
         [Required]
-        public bool Available { get; set; }
+        public bool IsActive { get; set; }
     }
 }
 

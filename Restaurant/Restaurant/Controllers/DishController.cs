@@ -20,7 +20,7 @@ namespace Restaurant.Controllers
             _dishService = dishService;
         }
 
-
+        //Create
         [HttpPost]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
@@ -29,8 +29,36 @@ namespace Restaurant.Controllers
         {
             var result = await _dishService.CreateDishAsync(request);
             return Ok(result);
+        }
 
-            //return CreatedAtAction(nameof(GetDishById), new { id = result.Id }, result);
+        //Update
+        [HttpPut("{id}")]
+        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult>UpdateDishAsync(Guid id, [FromBody] DishUpdateRequest request)
+        {
+            if (id != id)
+                return BadRequest("El ID de la URL no coincide con el del cuerpo.");
+            try
+            {
+                var result = await _dishService.UpdateDishAsync(id,request);
+                return Ok(result);
+            }
+            catch (ArgumentException ex)
+            {
+                return NotFound(new ValidationProblemDetails
+                {
+                    Title = "Error de validación",
+                    Status = 404,
+                    Detail = ex.Message
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+
         }
 
         /* public async Task<IActionResult> GetAllDishes([FromQuery] string? name, [FromQuery] int? category, [FromQuery] string? sortByPrice, [FromQuery] bool? onlyActive)
@@ -59,18 +87,7 @@ namespace Restaurant.Controllers
              return Ok(dishes);
          }
 
-             //Crear nuevo plato
-             [HttpPost]
-        [ProducesResponseType(201)]
-        [ProducesResponseType(400)]
-        public async Task<IActionResult> CreateDish([FromBody] CreateDishRequest request)
-        {
-             if (!ModelState.IsValid)
-                 return BadRequest(ModelState);
-
-             await _dishService.CreateDishAsync(request);
-             return StatusCode(201); // Created
-        }
+            
 
          */
 

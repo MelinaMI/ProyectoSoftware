@@ -5,7 +5,7 @@ namespace Application.Interfaces.IDish
     public interface IDishCommand
     {
         Task InsertDishAsync(Dish dish);
-       // Task UpdateDishAsync(Dish dish);
+        Task UpdateDishAsync(Dish dish);
         
     }
 }

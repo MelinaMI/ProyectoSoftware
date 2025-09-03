@@ -19,10 +19,10 @@ namespace Infrastructure.Commands
             await _context.SaveChangesAsync();
         }
 
-       /* public async Task UpdateDishAsync(Dish dish)
+       public async Task UpdateDishAsync(Dish dish)
         {
             _context.Update(dish);
             await _context.SaveChangesAsync();
-        }*/
+        }
     }
 }

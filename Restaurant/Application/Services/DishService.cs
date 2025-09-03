@@ -79,8 +79,39 @@ namespace Application.Services
             };
         }
 
+        public async Task<DishResponse> UpdateDishAsync(Guid id, DishUpdateRequest request)
+        {
+            var dish = await _dishQuery.GetDishByIdAsync(id);
+            if (dish == null)
+                throw new ArgumentException("No se encontró un plato con ese ID.");
+            // Actualización
+            dish.Name = request.Name;
+            dish.Description = request.Description;
+            dish.Price = request.Price;
+            dish.Category = request.Category;
+            dish.ImageUrl = request.Image;
+            dish.Available = request.IsActive;
+            dish.UpdateDate = DateTime.UtcNow;
+
+            await _dishCommand.UpdateDishAsync(dish);
+
+            var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category);
+
+            return new DishResponse
+            {
+                Name = dish.Name,
+                Description = dish.Description,
+                Price = dish.Price,
+                Category = new GenericResponse
+                {
+                    Id = category.Id,
+                },
+                Image = dish.ImageUrl,
+                IsActive = dish.Available,
+            };
 
 
+        }
 
 
 
@@ -152,4 +183,6 @@ namespace Application.Services
              }).ToList();
          }*/
     }
-}
+
+        
+    }

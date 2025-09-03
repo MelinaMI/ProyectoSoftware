@@ -21,9 +21,9 @@ namespace Infrastructure.Queries
             throw new NotImplementedException();
         }
 
-        public Task<Dish> GetDishByIdAsync(Guid id)
+        public async Task<Dish> GetDishByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Dishes.FirstOrDefaultAsync(d => d.DishId == id);
         }
 
         /* public async Task<Dish?> GetDishByIdAsync(Guid id)
