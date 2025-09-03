@@ -1,11 +1,15 @@
-﻿using Application.Interfaces.IDish;
+﻿using Application;
+using Application.Interfaces.IDish;
 using Application.Request.Create;
 using Application.Request.Update;
 using Application.Response;
+using Application.Validators;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Text.RegularExpressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Restaurant.Controllers
 {
@@ -14,28 +18,47 @@ namespace Restaurant.Controllers
     public class DishController : ControllerBase
     {
         private readonly IDishService _dishService;
-
-        public DishController(IDishService dishService)
+        private readonly DishValidator _dishValidator;
+        
+        public DishController(IDishService dishService, DishValidator dishValidator)
         {
             _dishService = dishService;
+            _dishValidator = dishValidator;
         }
 
         //Create
         [HttpPost]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
-        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateDishAsync([FromBody] DishRequest request)
         {
-            var result = await _dishService.CreateDishAsync(request);
-            return Ok(result);
+            var validationErrors = await _dishValidator.ValidateAsync(request);
+            if (validationErrors.Any())
+            {
+                return BadRequest(new ApiError { Message = string.Join(" | ", validationErrors) });
+            }
+            try
+            {
+                //Crear el plato si pasó las validaciones
+                var result = await _dishService.CreateDishAsync(request);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+             //Captura de errores inesperados
+             return StatusCode(StatusCodes.Status500InternalServerError, new ApiError{Message = $"Ocurrió un error al crear el plato: {ex.Message}"});
+            }
+
         }
+        
+
 
         //Update
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        /*[ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]*/
         public async Task<IActionResult>UpdateDishAsync(Guid id, [FromBody] DishUpdateRequest request)
         {
             if (id != id)
@@ -61,15 +84,11 @@ namespace Restaurant.Controllers
 
         }
 
-        /* public async Task<IActionResult> GetAllDishes([FromQuery] string? name, [FromQuery] int? category, [FromQuery] string? sortByPrice, [FromQuery] bool? onlyActive)
-         {
-             var result = await _dishService.GetAllDishAsync(name, category, sortByPrice, onlyActive);
-             return new JsonResult(result);
-         }*/
+       
 
-        // Buscar platos con filtros
-        /* [HttpGet]
-         public async Task<IActionResult> GetAllDishes([FromQuery] string? name, [FromQuery] int? category, [FromQuery] string? sortByPrice, [FromQuery] bool onlyActive = true)
+        // Buscar platos con filtros --REVISAR ESTO--
+       /* [HttpGet]
+         public async Task<IActionResult> GetAllDishes([FromQuery] string? name, [FromQuery] int? category, [FromQuery] SortOrder sortByPrice, [FromQuery] bool onlyActive = true)
          {
              // Validación de parámetros
              var validSortValues = new[] { "asc", "desc", null };
@@ -83,13 +102,10 @@ namespace Restaurant.Controllers
                      Instance = HttpContext.Request.Path
                  });
              }
-             var dishes = await _dishService.GetAllDishAsync(name, category, sortByPrice, onlyActive);
+             var dishes = await _dishService.GetAllDishesAsync(name, category, sortByPrice, onlyActive);
              return Ok(dishes);
-         }
+         }*/
 
-            
-
-         */
 
     }
 

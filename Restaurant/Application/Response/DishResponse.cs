@@ -13,7 +13,5 @@ namespace Application.Response
         public bool IsActive { get; set; }
         public DateTime CreateAt { get; set; }
         public DateTime UpdateAt { get; set; }
-
-
     }
 }

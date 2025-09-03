@@ -10,8 +10,7 @@ namespace Application.Interfaces.IDish
         Task<DishResponse> CreateDishAsync(DishRequest request); //uso CreateDishRequest para separar las responsabilidades
         Task<DishResponse> GetDishByIdAsync(Guid id);
         Task<DishResponse> UpdateDishAsync(Guid id, DishUpdateRequest request);
-        //Task<List<Dish>> GetAllDishAsync(string? name, int? category, string? sortByPrice, bool? onlyActive);
-        //Task <IReadOnlyList<DishResponse>> GetAllDishAsync(string? name, int? category, string? sortByPrice, bool? onlyActive);
 
+        //Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, SortOrder? sortByPrice, bool? onlyActive);
     }
 }

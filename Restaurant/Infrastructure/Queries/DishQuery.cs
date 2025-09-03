@@ -2,7 +2,6 @@
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Queries
 {
@@ -14,23 +13,32 @@ namespace Infrastructure.Queries
             _context = context;
         }
 
-       
-
-        public Task<List<Dish>> GetAllDishesAsync(string? name, int? category, string? sortByPrice, bool? onlyActive)
+        /*public async Task<IReadOnlyList<Dish>> GetAllDishesAsync(string? name, int? category, SortOrder? sortByPrice, bool? onlyActive)
         {
-            throw new NotImplementedException();
-        }
+            var query = _context.Dishes.Include(d => d.CategoryNavigation).AsQueryable();
+
+            if (!string.IsNullOrEmpty(name))
+                query = query.Where(d => d.Name.Contains(name));
+
+            if (category.HasValue)
+                query = query.Where(d => d.Category == category.Value);
+
+            if (sortByPrice.HasValue)
+            {
+                query = sortByPrice.Value == SortOrder.Asc
+                    ? query.OrderBy(d => d.Price)
+                    : query.OrderByDescending(d => d.Price);
+            }
+
+            return await query.ToListAsync();
+        }*/
 
         public async Task<Dish> GetDishByIdAsync(Guid id)
         {
-            return await _context.Dishes.FirstOrDefaultAsync(d => d.DishId == id);
+            return await _context.Dishes.Include(c => c.CategoryNavigation).FirstOrDefaultAsync(d => d.DishId == id);
         }
 
-        /* public async Task<Dish?> GetDishByIdAsync(Guid id)
-         {
-             return await _context.Dishes.Include(d => d.CategoryNavigation).AsNoTracking().FirstOrDefaultAsync(d => d.DishId == id);
-         }
-        */
+
 
         /*  public async Task<Dish?> GetDishByNameAsync(string name)
           {

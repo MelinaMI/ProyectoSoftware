@@ -22,9 +22,9 @@ namespace Application.Services
             _categoryQuery = categoryQuery;
             _dishValidator = new DishValidator(dishQuery, categoryQuery);
         }
-       public async Task<DishResponse> CreateDishAsync(DishRequest request)
+        public async Task<DishResponse> CreateDishAsync(DishRequest request)
         {
-            await _dishValidator.ValidateAsync(request);
+            //await _dishValidator.ValidateAsync(request);
             var dish = new Dish
             {
                 DishId = Guid.NewGuid(),
@@ -38,10 +38,11 @@ namespace Application.Services
                 UpdateDate = DateTime.UtcNow
             };
             await _dishCommand.InsertDishAsync(dish);
+
             var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category);
             return new DishResponse
             {
-                Id = request.Id,
+                Id = dish.DishId,
                 Name = request.Name,
                 Description = request.Description,
                 Price = request.Price,
@@ -51,15 +52,19 @@ namespace Application.Services
                     Name = category.Name,
                 },
                 Image = dish.ImageUrl,
-                IsActive = dish.Available
+                IsActive = dish.Available,
+                CreateAt = DateTime.UtcNow,
+                UpdateAt = DateTime.UtcNow
+                
             };
         }
-
         public async Task<DishResponse> GetDishByIdAsync(Guid id)
         {
             var dish = await _dishQuery.GetDishByIdAsync(id);
+
             if (dish == null)
                 return null;
+
             var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category);
             return new DishResponse
             {
@@ -78,7 +83,6 @@ namespace Application.Services
                 UpdateAt = dish.UpdateDate,
             };
         }
-
         public async Task<DishResponse> UpdateDishAsync(Guid id, DishUpdateRequest request)
         {
             var dish = await _dishQuery.GetDishByIdAsync(id);
@@ -112,77 +116,39 @@ namespace Application.Services
 
 
         }
+        /*public async Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? categoryId, SortOrder? sortByPrice, bool? onlyActive)
+        {
+            var dish = await _dishQuery.GetAllDishesAsync(name, categoryId, sortByPrice,onlyActive);
+            
+            // Por cada plato, buscamos la categoría y armamos el DishResponse
+            var dishResponses = new List<DishResponse>();
 
+            foreach (var d in dish)
+            {
+                var category = await _categoryQuery.GetByCategoryIdAsync(d.CategoryNavigation.Id); 
 
+                dishResponses.Add(new DishResponse
+                {
+                    Id = d.DishId,
+                    Name = d.Name,
+                    Description = d.Description,
+                    Price = d.Price,
+                    Category = new GenericResponse
+                    {
+                        Id = category.Id,
+                        Name = category.Name
+                    }
+                });
+            }
 
-        /*  public Task<IReadOnlyList<DishResponse>> GetAllDishAsync(string? name, int? category, string? sortByPrice, bool? onlyActive)
-          {
-              throw new NotImplementedException();
-          }
+            return dishResponses;
 
-          public Task UpdateDishAsync(UpdateDishRequest request)
-          {
-              throw new NotImplementedException();
-          }
-        */
-
-        /*  public Task<List<Dish>> GetAllDishAsync()
-          {
-              throw new NotImplementedException();
-          }*/
-
-
-
-
-        /* public async Task UpdateDishAsync(UpdateDishRequest request)
-         {
-             await _dishValidator.ValidateAsync(request);
-             var dish = new Dish
-             {
-                 DishId = request.Id,
-                 Name = request.Name,
-                 Description = request.Description,
-                 Price = request.Price,
-                 Category = request.Category,
-                 Available = true,
-                 UpdateDate = DateTime.UtcNow
-             };
-
-             await _dishCommand.UpdateDishAsync(dish);
-
-         }*/
-
-        /* public Task<Dish> UpdateDishAsync(Guid dishId)
-         {
-             throw new NotImplementedException();
-         }
-
-         async Task<IReadOnlyList<DishResponse>> IDishService.GetAllDishesAsync(string? name, int? category, string? sortByPrice, bool? onlyActive)
-         {
-             //Obtengo los platos desde la base de datos
-             var dishes = await _dishQuery.GetAllDishesAsync(name, category, sortByPrice,onlyActive);
-
-             //Transformo cada entidad de Dish de dominio en un DTO DishResponse
-             return dishes.Select(d => new DishResponse
-             {
-                 //Mapeo
-                 Id = d.DishId,
-                 Name = d.Name,
-                 Description = d.Description,
-                 Price = d.Price,
-                 ImageUrl = d.ImageUrl,
-                 Available = d.Available,
-                 CreateDate = d.CreateDate,
-                 UpdateDate = d.UpdateDate,
-                 //Mapeo la categoría asociada a un objeto más simple
-                 Category = new GenericResponse
-                 {
-                     Id = d.CategoryNavigation.Id,
-                     Name = d.CategoryNavigation.Name
-                 }
-             }).ToList();
-         }*/
-    }
+        }*/
 
         
+
+
+        
+
     }
+}

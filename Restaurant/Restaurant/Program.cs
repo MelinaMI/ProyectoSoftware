@@ -1,6 +1,7 @@
 using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
 using Application.Services;
+using Application.Validators;
 using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IDishCommand, DishCommand>();
 builder.Services.AddScoped<IDishService, DishService>();
 builder.Services.AddScoped<IDishQuery, DishQuery>();
 builder.Services.AddScoped<ICategoryQuery, CategoryQuery>();
+builder.Services.AddScoped<DishValidator>();
 
 var app = builder.Build();
 
