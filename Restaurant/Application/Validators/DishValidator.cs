@@ -1,13 +1,7 @@
 ﻿using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
 using Application.Request.Create;
-using Application.Request.Update;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Validators
 {
@@ -22,7 +16,7 @@ namespace Application.Validators
         }
 
         //Creacion
-        public async Task ValidateAsync(CreateDishRequest request)
+        public async Task ValidateAsync(DishRequest request)
         {
             // Validar nombre no vacío y longitud
             if (string.IsNullOrWhiteSpace(request.Name))
@@ -34,10 +28,12 @@ namespace Application.Validators
             if (request.Price <= 0)
                 throw new ValidationException("El precio debe ser mayor a cero.");
             // Validar categoría
-            var category = await _categoryQuery.GetByCategoryIdAsync(request.CategoryId);
+            var category = await _categoryQuery.GetByCategoryIdAsync(request.Category);
             if (category == null)
                 throw new ValidationException("La categoría especificada no existe.");
-
+            // Validación de imagen
+            if (string.IsNullOrWhiteSpace(request.Image))
+                throw new ArgumentException("La URL de la imagen es obligatoria.");
             /*  
               // Validar unicidad del nombre
               var existing = await _dishQuery.GetDishByNameAsync(request.Name);

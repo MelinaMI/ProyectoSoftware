@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Application.Request.Create.CreateDishRequest",
+        "Type": "Application.Request.Create.DishRequest",
         "IsRequired": true
       }
     ],
@@ -31,6 +31,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },

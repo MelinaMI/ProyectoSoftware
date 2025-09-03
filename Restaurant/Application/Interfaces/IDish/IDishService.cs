@@ -7,13 +7,12 @@ namespace Application.Interfaces.IDish
 {
     public interface IDishService
     {
-        
-       
-        //Task<List<Dish>> GetAllDishAsync();
-       
-        Task<DishResponse> CreateDishAsync(CreateDishRequest request); //uso CreateDishRequest para separar las responsabilidades
-       // Task UpdateDishAsync(UpdateDishRequest request);
+        Task<DishResponse> CreateDishAsync(DishRequest request); //uso CreateDishRequest para separar las responsabilidades
+        Task<DishResponse> GetDishByIdAsync(Guid id);
+
+        // Task<DishResponse> UpdateDishAsync(UpdateDishRequest request);
+        //Task<List<Dish>> GetAllDishAsync(string? name, int? category, string? sortByPrice, bool? onlyActive);
         //Task <IReadOnlyList<DishResponse>> GetAllDishAsync(string? name, int? category, string? sortByPrice, bool? onlyActive);
-        
+
     }
 }

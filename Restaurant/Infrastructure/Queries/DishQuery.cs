@@ -21,6 +21,11 @@ namespace Infrastructure.Queries
             throw new NotImplementedException();
         }
 
+        public Task<Dish> GetDishByIdAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         /* public async Task<Dish?> GetDishByIdAsync(Guid id)
          {
              return await _context.Dishes.Include(d => d.CategoryNavigation).AsNoTracking().FirstOrDefaultAsync(d => d.DishId == id);

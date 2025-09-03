@@ -22,7 +22,7 @@ namespace Application.Services
             _categoryQuery = categoryQuery;
             _dishValidator = new DishValidator(dishQuery, categoryQuery);
         }
-       public async Task<DishResponse> CreateDishAsync(CreateDishRequest request)
+       public async Task<DishResponse> CreateDishAsync(DishRequest request)
         {
             await _dishValidator.ValidateAsync(request);
             var dish = new Dish
@@ -31,9 +31,9 @@ namespace Application.Services
                 Name = request.Name,
                 Description = request.Description,
                 Price = request.Price,
-                Category = request.CategoryId,
+                Category = request.Category,
                 Available = true,
-                ImageUrl = request.ImageUrl,
+                ImageUrl = request.Image,
                 CreateDate = DateTime.UtcNow,
                 UpdateDate = DateTime.UtcNow
             };
@@ -45,36 +45,63 @@ namespace Application.Services
                 Name = request.Name,
                 Description = request.Description,
                 Price = request.Price,
-                Category = new CategoryResponse
+                Category = new GenericResponse
                 {
                     Id = category.Id,
                     Name = category.Name,
                 },
-                ImageUrl = dish.ImageUrl,
-                Available = dish.Available
+                Image = dish.ImageUrl,
+                IsActive = dish.Available
             };
         }
 
-      /*  public Task<IReadOnlyList<DishResponse>> GetAllDishAsync(string? name, int? category, string? sortByPrice, bool? onlyActive)
+        public async Task<DishResponse> GetDishByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var dish = await _dishQuery.GetDishByIdAsync(id);
+            if (dish == null)
+                return null;
+            var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category);
+            return new DishResponse
+            {
+                Id = dish.DishId,
+                Name = dish.Name,
+                Description = dish.Description,
+                Price = dish.Price,
+                Image = dish.ImageUrl,
+                IsActive = dish.Available,
+                Category = new GenericResponse
+                {
+                    Id = category.Id,
+                    Name = category.Name,
+                },
+                CreateAt = dish.CreateDate,
+                UpdateAt = dish.UpdateDate,
+            };
         }
 
-        public Task UpdateDishAsync(UpdateDishRequest request)
-        {
-            throw new NotImplementedException();
-        }
-      */
 
-        /*  public Task<List<Dish>> GetAllDishAsync()
+
+
+
+
+        /*  public Task<IReadOnlyList<DishResponse>> GetAllDishAsync(string? name, int? category, string? sortByPrice, bool? onlyActive)
           {
               throw new NotImplementedException();
           }
 
-          public Task<Dish> GetDishById(Guid id)
+          public Task UpdateDishAsync(UpdateDishRequest request)
+          {
+              throw new NotImplementedException();
+          }
+        */
+
+        /*  public Task<List<Dish>> GetAllDishAsync()
           {
               throw new NotImplementedException();
           }*/
+
+
+
 
         /* public async Task UpdateDishAsync(UpdateDishRequest request)
          {

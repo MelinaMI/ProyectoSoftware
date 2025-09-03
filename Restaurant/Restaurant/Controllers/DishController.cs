@@ -22,20 +22,22 @@ namespace Restaurant.Controllers
 
 
         [HttpPost]
-        /* public async Task<IActionResult> GetAllDishes([FromQuery] string? name, [FromQuery] int? category, [FromQuery] string? sortByPrice, [FromQuery] bool? onlyActive)
-         {
-             var result = await _dishService.GetAllDishAsync(name, category, sortByPrice, onlyActive);
-             return new JsonResult(result);
-         }*/
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> CreateDishAsync([FromBody] CreateDishRequest request)
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CreateDishAsync([FromBody] DishRequest request)
         {
             var result = await _dishService.CreateDishAsync(request);
             return Ok(result);
 
             //return CreatedAtAction(nameof(GetDishById), new { id = result.Id }, result);
         }
+
+        /* public async Task<IActionResult> GetAllDishes([FromQuery] string? name, [FromQuery] int? category, [FromQuery] string? sortByPrice, [FromQuery] bool? onlyActive)
+         {
+             var result = await _dishService.GetAllDishAsync(name, category, sortByPrice, onlyActive);
+             return new JsonResult(result);
+         }*/
 
         // Buscar platos con filtros
         /* [HttpGet]

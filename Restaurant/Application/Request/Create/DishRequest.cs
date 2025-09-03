@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Application.Request.Create
 {
-    public class CreateDishRequest
+    public class DishRequest
     {
         internal Guid Id;
 
@@ -18,9 +18,9 @@ namespace Application.Request.Create
         [Range(0.01, double.MaxValue)]
         public decimal Price { get; set; }
         [Required]
-        public int CategoryId { get; set; }
+        public int Category { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string Image { get; set; }
 
     }
 }
