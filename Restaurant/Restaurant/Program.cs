@@ -6,7 +6,7 @@ using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
 using Microsoft.EntityFrameworkCore;
-using System;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,10 +17,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
+
 //CUSTOM
 //Inyección de dependencias
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
+
+//Servicio para que me muestre asc y desc 
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
+
 // Inyeccion de servicios
 //-- DISH--
 builder.Services.AddScoped<IDishCommand, DishCommand>();
@@ -28,7 +39,7 @@ builder.Services.AddScoped<IDishService, DishService>();
 builder.Services.AddScoped<IDishQuery, DishQuery>();
 builder.Services.AddScoped<ICategoryQuery, CategoryQuery>();
 builder.Services.AddScoped<DishValidator>();
-
+//END CUSTOM 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

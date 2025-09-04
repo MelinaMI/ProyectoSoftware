@@ -12,75 +12,17 @@ namespace Infrastructure.Queries
         {
             _context = context;
         }
-
-        /*public async Task<IReadOnlyList<Dish>> GetAllDishesAsync(string? name, int? category, SortOrder? sortByPrice, bool? onlyActive)
+        public async Task<IReadOnlyList<Dish>> GetAllAsync()
         {
-            var query = _context.Dishes.Include(d => d.CategoryNavigation).AsQueryable();
-
-            if (!string.IsNullOrEmpty(name))
-                query = query.Where(d => d.Name.Contains(name));
-
-            if (category.HasValue)
-                query = query.Where(d => d.Category == category.Value);
-
-            if (sortByPrice.HasValue)
-            {
-                query = sortByPrice.Value == SortOrder.Asc
-                    ? query.OrderBy(d => d.Price)
-                    : query.OrderByDescending(d => d.Price);
-            }
-
-            return await query.ToListAsync();
-        }*/
-
-        public async Task<Dish> GetDishByIdAsync(Guid id)
-        {
-            return await _context.Dishes.Include(c => c.CategoryNavigation).FirstOrDefaultAsync(d => d.DishId == id);
+            return await _context.Dishes.Include(c => c.CategoryNavigation).AsNoTracking().ToListAsync();
         }
-
-
-
-        /*  public async Task<Dish?> GetDishByNameAsync(string name)
-          {
-              return await _context.Dishes.Include(d => d.CategoryNavigation).AsNoTracking().FirstOrDefaultAsync(d => d.Name.ToLower() == name.ToLower());
-          }
-          */
-
-
-
-        /* async Task<List<Dish>> IDishQuery.GetAllDishesAsync(string? name, int? category, decimal? sortByPrice, bool? onlyActive)
-         {
-             var query = _context.Dishes.Include(d => d.CategoryNavigation).AsNoTracking().AsQueryable();
-
-             // Filtro por nombre (contiene, case-insensitive)
-             if (!string.IsNullOrWhiteSpace(name))
-                 query = query.Where(d => d.Name.ToLower().Contains(name.ToLower()));
-
-             // Filtro por categoría
-             if (category.HasValue)
-                 query = query.Where(d => d.Category == category.Value);
-
-             // Filtro por estado activo
-             if (onlyActive.HasValue && onlyActive.Value)
-                 query = query.Where(d => d.Available);
-
-             // Ordenamiento por precio
-             if (!decimal.)
-             {
-                 switch (sortByPrice.ToLower())
-                 {
-                     case "asc":
-                         query = query.OrderBy(d => d.Price);
-                         break;
-                     case "desc":
-                         query = query.OrderByDescending(d => d.Price);
-                         break;
-                     default:
-                         throw new ValidationException("Parámetros de ordenamiento inválidos");
-                 }
-             }
-
-             return await query.ToListAsync();
-         }*/
+        public async Task<Dish> GetByIdAsync(Guid id)
+        {
+            return await _context.Dishes.Include(c => c.CategoryNavigation).AsNoTracking().FirstOrDefaultAsync(d => d.DishId == id);
+        }
+       public async Task<Dish?> GetByNameAsync(string name)
+        {
+            return await _context.Dishes.Include(d => d.CategoryNavigation).AsNoTracking().FirstOrDefaultAsync(d => d.Name.ToLower() == name.ToLower());
+        }
     }
 }

@@ -176,3 +176,4 @@ C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\Restaurant\Restaurant\bin\D
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\Restaurant\Restaurant\bin\Debug\net8.0\Infrastructure.pdb
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\Restaurant\Restaurant\bin\Debug\net8.0\Application.pdb
 C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\Restaurant\Restaurant\bin\Debug\net8.0\Domain.pdb
+C:\Users\Noxie\Desktop\Repositorios\ProyectoSoftware\Restaurant\Restaurant\bin\Debug\net8.0\Newtonsoft.Json.dll
