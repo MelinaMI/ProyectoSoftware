@@ -6,6 +6,7 @@ using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,10 +26,27 @@ var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
 
 //Servicio para que me muestre asc y desc 
+//Servicio para que me muestre asc y desc 
+/*builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });*/
+
 builder.Services.AddSwaggerGen(c =>
 {
-    c.UseInlineDefinitionsForEnums();
+    // Mapea el enum OrderPrice como string con valores restringidos
+    c.MapType<Application.Enum.OrderPrice>(() => new Microsoft.OpenApi.Models.OpenApiSchema
+    {
+        Type = "string",
+        Enum = new List<Microsoft.OpenApi.Any.IOpenApiAny>
+        {
+            new Microsoft.OpenApi.Any.OpenApiString("asc"),
+            new Microsoft.OpenApi.Any.OpenApiString("desc")
+        }
+    });
 });
+
 
 // Inyeccion de servicios
 //-- DISH--

@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\restaurant\\restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|solutionrelative:restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\restaurant\\application\\enum\\orderprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\enum\\orderprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 139,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +31,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderPrice.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Application\\Enum\\OrderPrice.cs",
+              "RelativeDocumentMoniker": "Application\\Enum\\OrderPrice.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Application\\Enum\\OrderPrice.cs",
+              "RelativeToolTip": "Application\\Enum\\OrderPrice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T04:59:42.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Restaurant\\Program.cs",
+              "RelativeDocumentMoniker": "Restaurant\\Program.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Restaurant\\Program.cs",
+              "RelativeToolTip": "Restaurant\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T04:59:28.132Z",
+              "EditorCaption": ""
             }
           ]
         }

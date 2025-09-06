@@ -137,11 +137,10 @@
             "in": "query",
             "schema": {
               "enum": [
-                0,
-                1
+                "asc",
+                "desc"
               ],
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
