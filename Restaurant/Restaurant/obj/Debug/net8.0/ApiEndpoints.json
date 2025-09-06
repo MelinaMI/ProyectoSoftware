@@ -9,13 +9,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Application.Request.Create.DishRequest",
+        "Type": "Application.Models.Request.DishRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Application.Response.DishResponse",
+        "Type": "Application.Models.Response.DishResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -24,7 +24,7 @@
         "StatusCode": 201
       },
       {
-        "Type": "Application.Response.ApiError",
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -33,7 +33,16 @@
         "StatusCode": 400
       },
       {
-        "Type": "Application.Response.ApiError",
+        "Type": "Application.Models.Response.ApiError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -74,7 +83,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Response.DishResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Models.Response.DishResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -83,7 +92,7 @@
         "StatusCode": 200
       },
       {
-        "Type": "Application.Response.ApiError",
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -92,7 +101,7 @@
         "StatusCode": 400
       },
       {
-        "Type": "Application.Response.ApiError",
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -117,22 +126,22 @@
       },
       {
         "Name": "request",
-        "Type": "Application.Request.Update.DishUpdateRequest",
+        "Type": "Application.Models.Request.DishUpdateRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Application.Response.DishResponse",
+        "Type": "Application.Models.Response.DishResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
-        "StatusCode": 200
+        "StatusCode": 201
       },
       {
-        "Type": "Application.Response.ApiError",
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -141,7 +150,25 @@
         "StatusCode": 400
       },
       {
-        "Type": "Application.Response.ApiError",
+        "Type": "Application.Models.Response.ApiError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Application.Models.Response.ApiError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",

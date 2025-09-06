@@ -1,9 +1,9 @@
-﻿using Application.Interfaces.IDish;
-using Application.Request.Create;
-using Application.Request.Update;
-using Application.Response;
-using Application.Validators;
+﻿using Application.Enum;
+using Application.Interfaces.IDish;
+using Application.Models.Request;
+using Application.Models.Response;
 using Microsoft.AspNetCore.Mvc;
+using static Application.Validators.Exceptions;
 
 namespace Restaurant.Controllers
 {
@@ -11,60 +11,90 @@ namespace Restaurant.Controllers
     [Route("api/v1/[controller]")]
     public class DishController : ControllerBase
     {
-        private readonly IDishService _dishService;
-        private readonly DishValidator _dishValidator;
+        private readonly ICreateService _createService;
+        private readonly IUpdateService _updateService;
+        private readonly ICreateValidation _createValidator;
+        private readonly IUpdateValidation _updateValidator;
+        private readonly IGetService _getService;
+        private readonly IGetValidation _getValidator;
 
-        public DishController(IDishService dishService, DishValidator dishValidator)
+
+        public DishController(ICreateService createService, IUpdateService updateService, ICreateValidation createValidator, IUpdateValidation updateValidator, IGetService getService, IGetValidation getValidator)
         {
-            _dishService = dishService;
-            _dishValidator = dishValidator;
+            _createService = createService;
+            _updateService = updateService;
+            _createValidator = createValidator;
+            _updateValidator = updateValidator;
+            _getService = getService;
+            _getValidator = getValidator;
         }
 
         //Create
         [HttpPost]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateDishAsync([FromBody] DishRequest request)
         {
-            var validationErrors = await _dishValidator.CreateValidateAsync(request);
-            if (validationErrors.Any())
-                return BadRequest(new ApiError { Message = string.Join(" | ", validationErrors) });
             try
             {
-                var result = await _dishService.CreateDishAsync(request); //Crea el plato si pasó las validaciones
+                await _createValidator.ValidateCreateAsync(request);
+                var result = await _createService.CreateDishAsync(request);
                 return Ok(result);
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new ApiError { Message = ex.Message });
+            }
+            catch (ConflictException ex)
+            {
+                return Conflict(new ApiError { Message = ex.Message });
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new ApiError { Message = ex.Message });
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error al crear el plato: {ex.Message}" });
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
             }
         }
 
         //Update
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateDishAsync(Guid id, [FromBody] DishUpdateRequest request)
         {
-            var validationErrors = await _dishValidator.UpdateValidateAsync(id, request);
-            if (validationErrors.Any())
-                return BadRequest(new ApiError{Message = string.Join(" | ", validationErrors)});
             try
             {
-                var result = await _dishService.UpdateDishAsync(id, request);
-                if (result == null)
-                    return NotFound(new ApiError{Message = "No se encontró el plato para actualizar"});
-                
+                await _updateValidator.ValidateUpdateAsync(id, request);
+                var result = await _updateService.UpdateDishAsync(id, request); 
                 return Ok(result);
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new ApiError { Message = ex.Message });
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new ApiError { Message = ex.Message });
+            }
+            catch (ConflictException ex)
+            {
+                return Conflict(new ApiError { Message = ex.Message });
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError{Message = $"Error interno del servidor: {ex.Message}"});
-            }
-        }
-
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
+            }    
+        }       
         // Buscar platos con filtros 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<DishResponse>), StatusCodes.Status200OK)]
@@ -75,12 +105,17 @@ namespace Restaurant.Controllers
         {
             try
             {
-                var result = await _dishService.GetAllDishesAsync(name,category, sortByPrice, onlyActive);
+                await _getValidator.ValidateQueryAsync(name, category, sortByPrice);
+                var result = await _getService.GetAllDishesAsync(name, category, sortByPrice, onlyActive);
                 return Ok(result);
             }
-            catch (ArgumentException ex)
+            catch (BadRequestException ex)
             {
                 return BadRequest(new ApiError { Message = ex.Message });
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new ApiError { Message = ex.Message });
             }
         }
     }

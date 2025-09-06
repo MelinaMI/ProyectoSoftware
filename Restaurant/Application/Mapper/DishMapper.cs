@@ -1,4 +1,4 @@
-﻿using Application.Response;
+﻿using Application.Models.Response;
 using Domain.Entities;
 
 namespace Application.Mapper

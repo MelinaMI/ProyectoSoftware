@@ -18,6 +18,7 @@ namespace Infrastructure.Commands
         }
         public async Task UpdateDishAsync(Dish dish)
         {
+            _context.Entry(dish).Property(d => d.Category).IsModified = true;
             _context.Update(dish);
             await _context.SaveChangesAsync();
         }

@@ -1,16 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Application.Request.Update
+namespace Application.Models.Request
 {
     public class DishUpdateRequest
     {
-        [Required(ErrorMessage = "El nombre del plato es obligatorio")]
-        [MaxLength(100)]
+        [Required]
         public string Name { get; set; }
-        [MaxLength(500)]
         public string Description { get; set; }
         [Required]
-        //[Range(0.01, double.MaxValue)]
         public decimal Price { get; set; }
         [Required]
         public int Category { get; set; }
@@ -19,4 +16,3 @@ namespace Application.Request.Update
         public bool IsActive { get; set; }
     }
 }
-

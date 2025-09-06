@@ -1,4 +1,4 @@
-﻿namespace Application.Response
+﻿namespace Application.Models.Response
 {
     public class ApiError
     {
