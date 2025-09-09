@@ -13,9 +13,8 @@ namespace Application.Validators
             _categoryQuery = categoryQuery;
         }
 
-        public async Task ValidateQueryAsync(string? name, int? category, OrderPrice? sortByPrice)
+        public async Task ValidateAllAsync(string? name, int? category, OrderPrice? sortByPrice)
         {
-
             // Validación de nombre
             if (!string.IsNullOrWhiteSpace(name) && name.Length > 100)
                 throw new Exceptions.BadRequestException("El nombre no puede superar los 100 caracteres");
@@ -30,10 +29,6 @@ namespace Application.Validators
                 if (exists == null)
                     throw new Exceptions.NotFoundException("La categoría especificada no existe");
             }
-
-            // Validación de ordenamiento
-            if (sortByPrice.HasValue && sortByPrice != OrderPrice.asc && sortByPrice != OrderPrice.desc)
-                throw new Exceptions.BadRequestException("Parámetro de ordenamiento inválido");
         }
     }
 }

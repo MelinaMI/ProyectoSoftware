@@ -1,14 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\",
+  "WorkspaceRootPath": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\restaurant\\restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\restaurant\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|solutionrelative:restaurant\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|solutionrelative:restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyectosoftware\\restaurant\\application\\enum\\orderprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\enum\\orderprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\validators\\getdishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\validators\\getdishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\interfaces\\idish\\igetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\interfaces\\idish\\igetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\services\\getdishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\services\\getdishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\interfaces\\idish\\igetvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\interfaces\\idish\\igetvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\interfaces\\idish\\iupdateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\interfaces\\idish\\iupdateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\interfaces\\idish\\iupdatevalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\interfaces\\idish\\iupdatevalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 139,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,27 +59,99 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OrderPrice.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Application\\Enum\\OrderPrice.cs",
-              "RelativeDocumentMoniker": "Application\\Enum\\OrderPrice.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Application\\Enum\\OrderPrice.cs",
-              "RelativeToolTip": "Application\\Enum\\OrderPrice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Program.cs",
+              "RelativeDocumentMoniker": "Restaurant\\Program.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Program.cs",
+              "RelativeToolTip": "Restaurant\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T04:59:42.162Z"
+              "WhenOpened": "2025-09-09T18:50:58.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IGetService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IGetService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IGetService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IGetService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IDish\\IGetService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T18:50:45.351Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Restaurant\\Program.cs",
-              "RelativeDocumentMoniker": "Restaurant\\Program.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\ProyectoSoftware\\Restaurant\\Restaurant\\Program.cs",
-              "RelativeToolTip": "Restaurant\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Title": "DishController.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Controllers\\DishController.cs",
+              "RelativeDocumentMoniker": "Restaurant\\Controllers\\DishController.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Controllers\\DishController.cs",
+              "RelativeToolTip": "Restaurant\\Controllers\\DishController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowFcAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T04:59:28.132Z",
+              "WhenOpened": "2025-09-09T18:03:45.475Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetDishValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Validators\\GetDishValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\GetDishValidator.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Validators\\GetDishValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\GetDishValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T18:00:13.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetDishService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Services\\GetDishService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\GetDishService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Services\\GetDishService.cs",
+              "RelativeToolTip": "Application\\Services\\GetDishService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:59:37.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUpdateValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IUpdateValidation.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IUpdateValidation.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IUpdateValidation.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IDish\\IUpdateValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:59:09.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IUpdateService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IUpdateService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IUpdateService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IUpdateService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IDish\\IUpdateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:59:07.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IGetValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IGetValidation.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IGetValidation.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IGetValidation.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IDish\\IGetValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:58:38.883Z"
             }
           ]
         }

@@ -7,14 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <Compile Remove="Interfaces\IDeliveryType\**" />
+    <Compile Remove="Interfaces\IOrderItem\**" />
+    <Compile Remove="Interfaces\IOrder\**" />
+    <Compile Remove="Interfaces\IStatus\**" />
+    <EmbeddedResource Remove="Interfaces\IDeliveryType\**" />
+    <EmbeddedResource Remove="Interfaces\IOrderItem\**" />
+    <EmbeddedResource Remove="Interfaces\IOrder\**" />
+    <EmbeddedResource Remove="Interfaces\IStatus\**" />
+    <None Remove="Interfaces\IDeliveryType\**" />
+    <None Remove="Interfaces\IOrderItem\**" />
+    <None Remove="Interfaces\IOrder\**" />
+    <None Remove="Interfaces\IStatus\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\IDeliveryType\" />
-    <Folder Include="Interfaces\IOrder\" />
-    <Folder Include="Interfaces\IOrderItem\" />
-    <Folder Include="Interfaces\IStatus\" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

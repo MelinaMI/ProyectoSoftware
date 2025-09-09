@@ -9,31 +9,26 @@ namespace Application.Services
     public class GetDishService : IGetService
     {
         private readonly IDishQuery _dishQuery;
-        private readonly ICategoryQuery _categoryQuery;
         private readonly IGetValidation _dishValidator;
 
-        public GetDishService(IDishQuery dishQuery, ICategoryQuery categoryQuery, IGetValidation dishValidator)
+        public GetDishService(IDishQuery dishQuery, IGetValidation dishValidator)
         {
             _dishQuery = dishQuery;
-            _categoryQuery = categoryQuery;
             _dishValidator = dishValidator;
         }
 
         public async Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, OrderPrice? sortByPrice, bool onlyActive)
         {
             // Validación de parámetros
-            await _dishValidator.ValidateQueryAsync(name, category, sortByPrice);
+            await _dishValidator.ValidateAllAsync(name, category, sortByPrice);
 
             var dishes = await _dishQuery.GetAllAsync();
 
-            // Filtro por nombre 
+            //Filtro por nombre
             if (!string.IsNullOrWhiteSpace(name))
             {
-                var normalized = name.Trim().ToLowerInvariant();
-                dishes = dishes
-                    .Where(d => !string.IsNullOrWhiteSpace(d.Name) &&
-                                d.Name.ToLowerInvariant().Contains(normalized))
-                    .ToList();
+                var normalized = name.Trim().Normalize().ToLowerInvariant();
+                dishes = dishes.Where(d => !string.IsNullOrWhiteSpace(d.Name) && d.Name.Normalize().ToLowerInvariant().Contains(normalized)).ToList();
             }
 
             // Filtro por categoría
@@ -44,12 +39,6 @@ namespace Application.Services
             if (onlyActive)
                 dishes = dishes.Where(d => d.Available).ToList();
 
-            if (sortByPrice.HasValue)
-            {
-                dishes = sortByPrice == OrderPrice.asc
-                    ? dishes.OrderBy(d => d.Price).ToList()
-                    : dishes.OrderByDescending(d => d.Price).ToList();
-            }
             if (!dishes.Any())
             {
                 if (!string.IsNullOrWhiteSpace(name) && category != null)
@@ -80,16 +69,6 @@ namespace Application.Services
                 UpdateAt = dish.UpdateDate,
 
             }).ToList();
-        }
-
-        public Task<DishResponse> GetDishByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<DishResponse> GetDishByNameAsync(string name)
-        {
-            throw new NotImplementedException();
         }
     }
 }

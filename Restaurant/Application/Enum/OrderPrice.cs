@@ -6,7 +6,7 @@ namespace Application.Enum
     {
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        asc = 0,
-        desc = 1
+        asc,
+        desc
     }
 }

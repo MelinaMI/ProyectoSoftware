@@ -4,7 +4,7 @@ namespace Application.Models.Request
 {
     public class DishUpdateRequest
     {
-        [Required]
+        [Required(ErrorMessage = "El nombre del plato es obligatorio")]
         public string Name { get; set; }
         public string Description { get; set; }
         [Required]

@@ -9,6 +9,6 @@ namespace Application.Interfaces.IDish
 {
     public interface IGetValidation
     {
-        Task ValidateQueryAsync(string? name, int? category, OrderPrice? sortByPrice);
+        Task ValidateAllAsync(string? name, int? category, OrderPrice? sortByPrice);
     }
 }

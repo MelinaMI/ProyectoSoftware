@@ -7,7 +7,6 @@ namespace Application.Interfaces.IDish
     public interface IGetService
     {
         Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, OrderPrice? sortByPrice, bool onlyActive);
-        Task<DishResponse> GetDishByIdAsync(Guid id);
-        Task<DishResponse> GetDishByNameAsync(string name);
+        
     }
 }

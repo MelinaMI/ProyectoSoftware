@@ -2,6 +2,8 @@
 using Application.Interfaces.IDish;
 using Application.Models.Request;
 using Application.Models.Response;
+using Domain.Entities;
+using Infrastructure.Queries;
 using Microsoft.AspNetCore.Mvc;
 using static Application.Validators.Exceptions;
 
@@ -28,7 +30,7 @@ namespace Restaurant.Controllers
             _getService = getService;
             _getValidator = getValidator;
         }
-
+        
         //Create
         [HttpPost]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
@@ -41,7 +43,8 @@ namespace Restaurant.Controllers
             {
                 await _createValidator.ValidateCreateAsync(request);
                 var result = await _createService.CreateDishAsync(request);
-                return Ok(result);
+                return StatusCode(StatusCodes.Status201Created, result);
+
             }
             catch (BadRequestException ex)
             {
@@ -64,7 +67,6 @@ namespace Restaurant.Controllers
 
         //Update
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
@@ -74,7 +76,7 @@ namespace Restaurant.Controllers
             try
             {
                 await _updateValidator.ValidateUpdateAsync(id, request);
-                var result = await _updateService.UpdateDishAsync(id, request); 
+                var result = await _updateService.UpdateDishAsync(id, request);
                 return Ok(result);
             }
             catch (BadRequestException ex)
@@ -105,7 +107,7 @@ namespace Restaurant.Controllers
         {
             try
             {
-                await _getValidator.ValidateQueryAsync(name, category, sortByPrice);
+                await _getValidator.ValidateAllAsync(name, category, sortByPrice);
                 var result = await _getService.GetAllDishesAsync(name, category, sortByPrice, onlyActive);
                 return Ok(result);
             }
