@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
 using Application.Models.Request;
+using System.Text;
 using static Application.Validators.Exceptions;
 
 namespace Application.Validators
@@ -15,7 +16,8 @@ namespace Application.Validators
             _categoryQuery = categoryQuery;
         }
         public async Task ValidateUpdateAsync(Guid id, DishUpdateRequest request)
-        {           
+        {
+            request.Name = request.Name?.Trim().Normalize(NormalizationForm.FormC);
             var dish = await _dishQuery.GetByIdAsync(id);
             if (dish == null)
                 throw new NotFoundException("El plato que desea actualizar no existe");

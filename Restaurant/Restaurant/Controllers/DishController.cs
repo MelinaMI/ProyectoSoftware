@@ -36,7 +36,6 @@ namespace Restaurant.Controllers
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateDishAsync([FromBody] DishRequest request)
         {
             try
@@ -67,10 +66,10 @@ namespace Restaurant.Controllers
 
         //Update
         [HttpPut("{id}")]
+        [ProducesResponseType(typeof(IEnumerable<DishResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateDishAsync(Guid id, [FromBody] DishUpdateRequest request)
         {
             try
@@ -101,8 +100,7 @@ namespace Restaurant.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<DishResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status500InternalServerError)]
-        
+               
         public async Task<ActionResult<DishResponse>> GetAllAsync([FromQuery] string? name,[FromQuery] int? category,[FromQuery] OrderPrice? sortByPrice,[FromQuery] bool onlyActive = true)
         {
             try

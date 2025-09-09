@@ -40,15 +40,6 @@
           "text/json"
         ],
         "StatusCode": 409
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 500
       }
     ]
   },
@@ -99,15 +90,6 @@
           "text/json"
         ],
         "StatusCode": 400
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 500
       }
     ]
   },
@@ -132,13 +114,13 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Application.Models.Response.DishResponse",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.Models.Response.DishResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
-        "StatusCode": 201
+        "StatusCode": 200
       },
       {
         "Type": "Application.Models.Response.ApiError",
@@ -166,15 +148,6 @@
           "text/json"
         ],
         "StatusCode": 409
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 500
       }
     ]
   }

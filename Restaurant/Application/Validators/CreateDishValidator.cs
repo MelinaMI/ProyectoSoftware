@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
 using Application.Models.Request;
+using System.Text;
 
 namespace Application.Validators
 {
@@ -15,6 +16,8 @@ namespace Application.Validators
         }
         public async Task ValidateCreateAsync(DishRequest request)
         {
+            request.Name = request.Name?.Trim().Normalize(NormalizationForm.FormC);
+
             if (string.IsNullOrWhiteSpace(request.Name))
                 throw new Exceptions.BadRequestException("El nombre del plato es obligatorio");
 

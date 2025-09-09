@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|solutionrelative:restaurant\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|solutionrelative:restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\validators\\getdishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\validators\\getdishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\validators\\createdishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|solutionrelative:application\\validators\\createdishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{455665C0-4839-499F-B3B7-9D8B321BEF91}|Restaurant\\Restaurant.csproj|solutionrelative:restaurant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8FF262D2-7A52-4062-8517-382F386E592B}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repos\\proyectosoftware\\restaurant\\application\\interfaces\\idish\\igetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 139,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,7 +62,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "CreateDishValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Validators\\CreateDishValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\CreateDishValidator.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Validators\\CreateDishValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\CreateDishValidator.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T20:10:02.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Program.cs",
               "RelativeDocumentMoniker": "Restaurant\\Program.cs",
@@ -70,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IGetService.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IGetService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IGetService.cs",
@@ -86,28 +103,29 @@
               "Title": "DishController.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Controllers\\DishController.cs",
               "RelativeDocumentMoniker": "Restaurant\\Controllers\\DishController.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Controllers\\DishController.cs",
-              "RelativeToolTip": "Restaurant\\Controllers\\DishController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAowFcAAABHAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Controllers\\DishController.cs*",
+              "RelativeToolTip": "Restaurant\\Controllers\\DishController.cs*",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowEYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-09T18:03:45.475Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "GetDishValidator.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Validators\\GetDishValidator.cs",
               "RelativeDocumentMoniker": "Application\\Validators\\GetDishValidator.cs",
               "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Validators\\GetDishValidator.cs",
               "RelativeToolTip": "Application\\Validators\\GetDishValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABIAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T18:00:13.471Z"
+              "WhenOpened": "2025-09-09T18:00:13.471Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GetDishService.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Services\\GetDishService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\GetDishService.cs",
@@ -119,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "IUpdateValidation.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IUpdateValidation.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IUpdateValidation.cs",
@@ -131,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IUpdateService.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IUpdateService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IUpdateService.cs",
@@ -143,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IGetValidation.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Interfaces\\IDish\\IGetValidation.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IGetValidation.cs",

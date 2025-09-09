@@ -1,6 +1,7 @@
 ﻿using Application.Enum;
 using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
+using System.Text;
 
 namespace Application.Validators
 {
@@ -15,6 +16,7 @@ namespace Application.Validators
 
         public async Task ValidateAllAsync(string? name, int? category, OrderPrice? sortByPrice)
         {
+            name = name?.Trim().Normalize(NormalizationForm.FormC);
             // Validación de nombre
             if (!string.IsNullOrWhiteSpace(name) && name.Length > 100)
                 throw new Exceptions.BadRequestException("El nombre no puede superar los 100 caracteres");
