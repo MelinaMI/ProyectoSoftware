@@ -1,10 +1,12 @@
 using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
+using Application.Models.Response;
 using Application.Services;
 using Application.Validators;
 using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -49,6 +51,17 @@ builder.Services.AddScoped<IDishQuery, DishQuery>();
 builder.Services.AddScoped<ICategoryQuery, CategoryQuery>();
 builder.Services.AddScoped<Exceptions>();
 builder.Services.AddScoped<IGetValidation, GetDishValidator>();
+//Manejo de errores de validación de modelos
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.InvalidModelStateResponseFactory = context =>
+    {
+        return new BadRequestObjectResult(new ApiError
+        {
+            Message = "Parámetros de ordenamiento inválidos"
+        });
+    };
+});
 
 //END CUSTOM 
 var app = builder.Build();
@@ -67,3 +80,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+public partial class Program { }

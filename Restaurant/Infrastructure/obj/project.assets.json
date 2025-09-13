@@ -4806,11 +4806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\TP1 - Miranda Ibarra Melina\\ProyectoSoftware\\Restaurant\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Noxie\\Desktop\\TP1 - Miranda Ibarra Melina\\ProyectoSoftware\\Restaurant\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Noxie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Noxie\\Desktop\\TP1 - Miranda Ibarra Melina\\ProyectoSoftware\\Restaurant\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4831,8 +4831,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Application\\Application.csproj"
+            "C:\\Users\\Noxie\\Desktop\\TP1 - Miranda Ibarra Melina\\ProyectoSoftware\\Restaurant\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\Noxie\\Desktop\\TP1 - Miranda Ibarra Melina\\ProyectoSoftware\\Restaurant\\Application\\Application.csproj"
             }
           }
         }

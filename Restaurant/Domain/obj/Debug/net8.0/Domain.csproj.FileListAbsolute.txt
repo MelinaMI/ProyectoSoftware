@@ -22,3 +22,15 @@ C:\Users\Noxie\Desktop\Repos\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0
 C:\Users\Noxie\Desktop\Repos\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\Noxie\Desktop\Repos\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\Noxie\Desktop\Repos\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\Noxie\Desktop\TP1 - Miranda Ibarra Melina\ProyectoSoftware\Restaurant\Domain\obj\Debug\net8.0\ref\Domain.dll

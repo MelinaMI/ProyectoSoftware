@@ -30,7 +30,7 @@ namespace Restaurant.Controllers
             _getService = getService;
             _getValidator = getValidator;
         }
-        
+
         //Create
         [HttpPost]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
@@ -43,7 +43,6 @@ namespace Restaurant.Controllers
                 await _createValidator.ValidateCreateAsync(request);
                 var result = await _createService.CreateDishAsync(request);
                 return StatusCode(StatusCodes.Status201Created, result);
-
             }
             catch (BadRequestException ex)
             {
@@ -94,14 +93,14 @@ namespace Restaurant.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
-            }    
-        }       
+            }
+        }
         // Buscar platos con filtros 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<DishResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
-               
-        public async Task<ActionResult<DishResponse>> GetAllAsync([FromQuery] string? name,[FromQuery] int? category,[FromQuery] OrderPrice? sortByPrice,[FromQuery] bool onlyActive = true)
+
+        public async Task<ActionResult<DishResponse>> GetAllAsync([FromQuery] string? name, [FromQuery] int? category, [FromQuery] OrderPrice? sortByPrice, [FromQuery] bool onlyActive = true)
         {
             try
             {

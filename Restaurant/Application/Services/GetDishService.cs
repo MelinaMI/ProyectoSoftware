@@ -9,19 +9,15 @@ namespace Application.Services
     public class GetDishService : IGetService
     {
         private readonly IDishQuery _dishQuery;
-        private readonly IGetValidation _dishValidator;
-
+   
         public GetDishService(IDishQuery dishQuery, IGetValidation dishValidator)
         {
             _dishQuery = dishQuery;
-            _dishValidator = dishValidator;
         }
 
         public async Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, OrderPrice? sortByPrice, bool onlyActive)
         {
             // Validación de parámetros
-            await _dishValidator.ValidateAllAsync(name, category, sortByPrice);
-
             var dishes = await _dishQuery.GetAllAsync();
 
             //Filtro por nombre
@@ -38,6 +34,20 @@ namespace Application.Services
             // Filtro por estado activo
             if (onlyActive)
                 dishes = dishes.Where(d => d.Available).ToList();
+
+            if (sortByPrice.HasValue)
+            {
+                dishes = sortByPrice.Value switch
+                {
+                    OrderPrice.asc => dishes.OrderBy(d => d.Price).ToList(),
+                    OrderPrice.desc => dishes.OrderByDescending(d => d.Price).ToList(),
+                    _ => dishes
+                };
+            }
+            if (sortByPrice.HasValue && sortByPrice != OrderPrice.asc && sortByPrice != OrderPrice.desc)
+            {
+                throw new Exceptions.BadRequestException("Parámetros de ordenamiento inválidos");
+            }
 
             if (!dishes.Any())
             {

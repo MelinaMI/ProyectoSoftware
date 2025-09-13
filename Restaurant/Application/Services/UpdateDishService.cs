@@ -4,6 +4,7 @@ using Application.Mapper;
 using Application.Models.Request;
 using Application.Models.Response;
 using Application.Validators;
+using static Application.Validators.Exceptions;
 
 namespace Application.Services
 {
@@ -12,19 +13,16 @@ namespace Application.Services
         private readonly IDishCommand _dishCommand;
         private readonly ICategoryQuery _categoryQuery;
         private readonly IDishQuery _dishQuery;
-        private readonly UpdateDishValidator _dishValidator;
-
+       
         public UpdateDishService(IDishCommand dishCommand, ICategoryQuery categoryQuery, IDishQuery dishQuery)
         {
             _dishCommand = dishCommand;
             _categoryQuery = categoryQuery;
-            _dishValidator = new UpdateDishValidator(dishQuery, categoryQuery);
             _dishQuery = dishQuery;
         }
         public async Task<DishResponse> UpdateDishAsync(Guid id, DishUpdateRequest request)
         {
             var dish = await _dishQuery.GetByIdAsync(id);
-            await _dishValidator.ValidateUpdateAsync(id, request);
 
             // Mapeo de actualización
             dish.Name = request.Name;

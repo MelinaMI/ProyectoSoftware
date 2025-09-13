@@ -5,6 +5,7 @@ using Application.Models.Request;
 using Application.Models.Response;
 using Application.Validators;
 using Domain.Entities;
+using System.Text;
 
 namespace Application.Services
 {
@@ -12,19 +13,14 @@ namespace Application.Services
     {
         private readonly IDishCommand _dishCommand;
         private readonly ICategoryQuery _categoryQuery;
-        private readonly CreateDishValidator _dishValidator;
-
 
         public CreateDishService(IDishCommand dishCommand, ICategoryQuery categoryQuery,IDishQuery dishQuery)
         {
             _dishCommand = dishCommand;
             _categoryQuery = categoryQuery;
-            _dishValidator = new CreateDishValidator(dishQuery, categoryQuery);
         }
         public async Task<DishResponse> CreateDishAsync(DishRequest request)
         {
-            await _dishValidator.ValidateCreateAsync(request);
-
             var dish = new Dish
             {
                 DishId = Guid.NewGuid(),
@@ -37,6 +33,7 @@ namespace Application.Services
                 CreateDate = DateTime.UtcNow,
                 UpdateDate = DateTime.UtcNow
             };
+
             await _dishCommand.InsertDishAsync(dish);
 
             var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category);

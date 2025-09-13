@@ -25,11 +25,11 @@ namespace Application.Validators
             if (category.HasValue)
             {
                 if (category.Value <= 0)
-                    throw new Exceptions.BadRequestException("La categoría debe ser mayor a 0");
+                    throw new Exceptions.BadRequestException("La categoría debe ser mayor a cero");
 
                 var exists = await _categoryQuery.GetByCategoryIdAsync(category.Value);
                 if (exists == null)
-                    throw new Exceptions.NotFoundException("La categoría especificada no existe");
+                    throw new Exceptions.NotFoundException("La categoría no existe");
             }
         }
     }

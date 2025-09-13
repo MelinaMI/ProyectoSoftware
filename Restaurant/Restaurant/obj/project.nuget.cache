@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MhaNyZQfp4k=",
+  "dgSpecHash": "UObS9dzYHjM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Noxie\\Desktop\\Repos\\ProyectoSoftware\\Restaurant\\Restaurant\\Restaurant.csproj",
+  "projectFilePath": "C:\\Users\\Noxie\\Desktop\\TP1 - Miranda Ibarra Melina\\ProyectoSoftware\\Restaurant\\Restaurant\\Restaurant.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Noxie\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Noxie\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,7 +1,11 @@
 ﻿using Application.Interfaces.IDish;
+using Azure.Core;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
+using System.Linq;
+using System.Text;
 
 namespace Infrastructure.Queries
 {
@@ -22,7 +26,18 @@ namespace Infrastructure.Queries
         }
        public async Task<Dish?> GetByNameAsync(string name)
         {
-            return await _context.Dishes.Include(d => d.CategoryNavigation).AsNoTracking().FirstOrDefaultAsync(d => d.Name.ToLower() == name.ToLower());
+            var normalizedName = name.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant();
+
+            // Traer platos al cliente (memoria) para poder usar Normalize
+            var dishes = await _context.Dishes
+                .Include(d => d.CategoryNavigation)
+                .AsNoTracking()
+                .ToListAsync();
+
+            return dishes.FirstOrDefault(d =>
+                !string.IsNullOrWhiteSpace(d.Name) &&
+                d.Name.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant() == normalizedName
+            );
         }
     }
 }

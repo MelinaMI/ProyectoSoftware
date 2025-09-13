@@ -17,27 +17,30 @@ namespace Application.Validators
         }
         public async Task ValidateUpdateAsync(Guid id, DishUpdateRequest request)
         {
-            request.Name = request.Name?.Trim().Normalize(NormalizationForm.FormC);
+            var nameNormalized = request.Name?.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant();
+
+
+            // Validar existencia del plato
             var dish = await _dishQuery.GetByIdAsync(id);
             if (dish == null)
-                throw new NotFoundException("El plato que desea actualizar no existe");
+                throw new NotFoundException("El plato no existe");
 
-            if (string.IsNullOrWhiteSpace(request.Name))
-                throw new BadRequestException("El nombre del plato es obligatorio.");
+            if (string.IsNullOrWhiteSpace(nameNormalized))
+                throw new BadRequestException("El nombre del plato es obligatorio");
 
-            if (request.Name.Length > 100)
-                throw new BadRequestException("El nombre no puede superar los 100 caracteres.");
+            if (nameNormalized.Length > 100)
+                throw new BadRequestException("El nombre no puede superar los 100 caracteres");
 
-            var existing = await _dishQuery.GetByNameAsync(request.Name);
-            if (existing != null && existing.DishId != id) 
-                throw new ConflictException("Ya existe un plato con el nombre: " + request.Name);
+            var existing = await _dishQuery.GetByNameAsync(nameNormalized);
+            if (existing != null && existing.DishId != id)
+                throw new ConflictException("Ya existe otro plato con ese nombre");
 
             if (request.Price <= 0)
-                throw new BadRequestException("El precio debe ser mayor a cero.");
+                throw new BadRequestException("El precio debe ser mayor a cero");
 
             var category = await _categoryQuery.GetByCategoryIdAsync(request.Category);
             if (category == null)
-                throw new NotFoundException("La categoría seleccionada no existe.");
+                throw new NotFoundException("La categoría no existe");
 
         }
     }
